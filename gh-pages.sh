@@ -14,9 +14,9 @@ mkdir -p $TMPDIR/git || true
 cp -rf $BASEDIR/dist $TMPDIR/dist
 
 cd $TMPDIR
-git clone -b master git@github.com:moul/m1ch3l.github.com.git
+git clone -b master git@github.com:moul/m1ch3l.github.com.git git
+cd git
 rsync -av ../dist/ .
-ls -la
-
-#cp -rf dist $TMPDIR/dist
-#git rm -r .
+git add .
+git commit -am "rebuild"
+git push origin master
