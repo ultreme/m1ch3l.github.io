@@ -3,14 +3,14 @@
 set -x
 set -e
 
-#bower install
-#grunt build
+bower install
+grunt build
 
 TMPDIR=/tmp/m1ch3l-dist
 BASEDIR=$(pwd)
 
-rm -rf $TMPDIR || true
-mkdir -p $TMPDIR/git || true
+rm -rf $TMPDIR
+mkdir -p $TMPDIR/git
 cp -rf $BASEDIR/dist $TMPDIR/dist
 
 cd $TMPDIR
